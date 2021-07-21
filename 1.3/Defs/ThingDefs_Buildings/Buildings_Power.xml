@@ -7,12 +7,14 @@
     <description>Placeholder</description>
     <thingClass>Building</thingClass>
     <graphicData>
-      <texPath>Things/Building/Power/EvaporationPond/EvaporationPond</texPath>
+      <texPath>Things/Building/Misc/EvaporationPond</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(4,4)</drawSize>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>Impassable</passability>
+    <passability>PassThroughOnly</passability>
+	<pathCost>50</pathCost>
+	<terrainAffordanceNeeded></terrainAffordanceNeeded>
     <blockWind>true</blockWind>
     <scatterableOnMapGen>false</scatterableOnMapGen>
     <fillPercent>1</fillPercent>
@@ -20,18 +22,14 @@
     <canOverlapZones>false</canOverlapZones>
     <statBases>
       <MaxHitPoints>500</MaxHitPoints>
-      <WorkToBuild>12000</WorkToBuild>
-      <Flammability>0.5</Flammability>
-      <Beauty>-30</Beauty>
+      <WorkToBuild>1000</WorkToBuild>
+      <Flammability>0</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <size>(4,4)</size>
-    <costList>
-      <Steel>300</Steel>
-      <ComponentIndustrial>9</ComponentIndustrial>
-    </costList>
     <comps>
       <li Class="CompProperties_Spawner">
+		<compClass>EvaporationPond.CompSpawner</compClass>
         <thingToSpawn>VCE_Salt</thingToSpawn>
         <spawnCount>20</spawnCount>
         <spawnIntervalRange>26000~30000</spawnIntervalRange>
@@ -44,13 +42,13 @@
     <placeWorkers>
 			<li>EvaporationPond.PlaceWorker_EvaporationPond</li>
 	</placeWorkers>
-    <designationCategory>Power</designationCategory>
+    <designationCategory>Misc</designationCategory>
     <building>
       <ai_chillDestination>false</ai_chillDestination>
       <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
     </building>
     <constructEffect>ConstructMetal</constructEffect>
-    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <constructionSkillPrerequisite>1</constructionSkillPrerequisite>
   </ThingDef>
   
 </Defs>
