@@ -107,10 +107,6 @@ namespace EvaporationPond
                     thing.SetFaction(parent.Faction);
                 }
                 GenPlace.TryPlaceThing(thing, result, parent.Map, ThingPlaceMode.Direct, out var lastResultingThing);
-                if (PropsSpawner.spawnForbidden)
-                {
-                    lastResultingThing.SetForbidden(value: true);
-                }
                 if (PropsSpawner.showMessageIfOwned && parent.Faction == Faction.OfPlayer)
                 {
                     Messages.Message("MessageCompSpawnerSpawnedItem".Translate(PropsSpawner.thingToSpawn.LabelCap), thing, MessageTypeDefOf.PositiveEvent);
